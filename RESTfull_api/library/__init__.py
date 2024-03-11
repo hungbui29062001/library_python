@@ -35,6 +35,7 @@ def blueprint_init(app):
     app.register_blueprint(categoryBlueprint)
 
 def create_db():
+    print(os.path.exists('RESTfull_api/instance/library.db'))
     if not os.path.exists('RESTfull_api/instance/library.db'):
         db.create_all()
         print('------------ Start init data ------------')
@@ -47,6 +48,6 @@ def create_app(config_file = 'config.py'):
         app.config.from_pyfile(config_file)
         db.init_app(app)
         ma.init_app(app)
-        create_db()
+        # create_db()
         blueprint_init(app)
     return app
