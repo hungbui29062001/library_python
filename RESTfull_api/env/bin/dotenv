@@ -1,4 +1,4 @@
-#!/Users/hung/Documents/Python/RESTfull_api/env/bin/python3
+#!/Users/hung/Documents/Python/RESTfull_api/env/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
