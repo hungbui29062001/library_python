@@ -5,4 +5,4 @@ class JsonSerializable(object):
         return json.dumps(self.__dict__)
 
     def __repr__(self):
-        return self.toJson()
+        return 'self.toJson()'

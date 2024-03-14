@@ -1,7 +1,7 @@
 from library.extension import db
 from library.common.json_serializable import JsonSerializable
 from sqlalchemy.orm import relationship
-from sqlalchemy.orm import backref, relationship
+from sqlalchemy.orm import relationship
 
 class Book(db.Model, JsonSerializable):
     __tablename__ = 'books'

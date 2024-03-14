@@ -1,17 +1,59 @@
-# from .extension import db
-# from .models.students import Students
-# from .models.author import Author
-# from .models.category import Category
+# # import required packages 
+# import json
 # from datetime import date
+# from extension import db
+# from common.json_serializable import JsonSerializable
+  
+# # custom class 
+# # class Student: 
+# #     def __init__(self, roll_no, name, batch): 
+# #         self.roll_no = roll_no 
+# #         self.name = name 
+# #         self.batch = batch
 
-# db.session.add(Students('Student 1', date(2001, 6, 29), 0, 'class 1'))
-# db.session.add(Students('Student 2', date(2000, 1, 12), 0, 'class 2'))
-# db.session.add(Students('Student 3', date(2000, 5, 2), 0, 'class 3'))
+# class Student2(db.Model, JsonSerializable):
+#     __tablename__ = 'students'
 
-# db.session.add(Author('Author 1'))
-# db.session.add(Author('Author 2'))
-# db.session.add(Author('Author 3'))
+#     id = db.Column(db.Integer, primary_key = True)
+#     name = db.Column(db.String(100), nullable = False)
 
-# db.session.add(Category('Category 1'))
-# db.session.add(Category('Category 2'))
-# db.session.add(Category('Category 3'))
+#     def __init__(self, name):
+#         self.name = name
+
+#     # def toJson(self):
+#     #     return {
+#     #         'name': self.name
+#     #     }
+    
+#     def toJson(self):
+#         return json.dumps(self.__dict__)
+    
+#     def __repr__(self) -> str:
+#         return super().__repr__()
+  
+# class Car(JsonSerializable):
+#     def __init__(self, name):
+#         self.name = name
+  
+# # main function 
+# if __name__ == "__main__": 
+    
+#     # create two new student objects 
+#     # s1 = Student2("85", "Swapnil", "IMT") 
+#     # s2 = Student2("124", "Akash", "IMT") 
+  
+#     # create two new car objects 
+#     c1 = Car("Honda")
+#     a = Student2(name='Student 1')
+  
+#     # convert to JSON format 
+#     # jsonstr1 = json.dumps(s1.__dict__) 
+#     # jsonstr2 = json.dumps(s2.__dict__) 
+#     # jsonstr3 = json.dumps(c1.__dict__) 
+#     # jsonstr5 = json.dumps((a))
+  
+#     # print created JSON objects 
+#     # print(jsonstr1) 
+#     # print(jsonstr2) 
+#     print(c1) 
+#     print(a.toJson())

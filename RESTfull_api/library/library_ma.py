@@ -2,7 +2,7 @@ from .extension import ma
 
 class StudentSchema(ma.Schema):
     class Meta:
-        fields = ('id', 'name', 'birth_date', 'gender', 'class_name')
+        fields = ('id', 'name', 'birth_date', 'gender', 'class_name', 'email')
 
 class AuthorSchema(ma.Schema):
     class Meta:
@@ -19,3 +19,7 @@ class CategorySchema(ma.Schema):
 class BorrowSchema(ma.Schema):
     class Meta:
         fields = ('id', 'students_id', 'books_id', 'borrow_date', 'return_date')
+
+class TokenBlockListSchema(ma.Schema):
+    class Meta:
+        fields = ('id', 'jti', 'created_at')
