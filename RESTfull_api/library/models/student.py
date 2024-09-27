@@ -52,3 +52,9 @@ class TokenBlockList(db.Model):
     def save(self):
         db.session.add(self)
         db.session.commit()
+
+class Image(db.Model):
+    __tablename__ = 'images'
+    
+    id = db.Column(db.Integer, primary_key = True)
+    url = db.Column(db.String(), nullable = True)

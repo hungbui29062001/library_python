@@ -9,6 +9,7 @@ from .controllers.borrow_controller import borrowsBlueprint
 from .controllers.students_controller import studentsBlueprint
 from .controllers.category_controller import categoryBlueprint
 from .controllers.auth_controller import auth_bp
+from .controllers.image_controller import image_bp
 import os
 from datetime import date
 from library.services.student_service import student_schema
@@ -34,6 +35,7 @@ def blueprint_init(app):
     app.register_blueprint(studentsBlueprint)
     app.register_blueprint(categoryBlueprint)
     app.register_blueprint(auth_bp)
+    app.register_blueprint(image_bp)
 
 def create_db(app):
     if not os.path.exists('instance/library.db'):

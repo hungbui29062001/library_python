@@ -23,3 +23,7 @@ class BorrowSchema(ma.Schema):
 class TokenBlockListSchema(ma.Schema):
     class Meta:
         fields = ('id', 'jti', 'created_at')
+
+class ImageSchema(ma.Schema):
+    class Meta:
+        fields = ('id', 'url')
